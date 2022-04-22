@@ -53,51 +53,51 @@ Sub Object 1: Steering Wheel
     Name 4 things you'll find on the:    Steering Wheel
         1) paddle shifters
         2) 'cruise control' controls
-        3) 
-        4) 
+        3) volume controls
+        4) horn button
     Name 2 things you can do with the:   Steering Wheel
         1) adjust cruise control settings.
-        2)
+        2) push the horn button
         
 Sub Object 2: Instrument Cluster
     Name 4 things you'll find on the:   Instrument Cluster
-        1)
-        2)
-        3)
-        4)
+        1) speedometer
+        2) tachometer
+        3) fuel gauge
+        4) turn signal indicators
     Name 3 things you can do with the:   Instrument Cluster
-        1)
-        2)
-        3)
+        1) turn on the turn signal indicator
+        2) change speedometer color
+        3) change tachometer rpm
     
 Sub Object 3: Environment Controls
     Name 3 things you'll find on the:    Environment Controls
-        1)
-        2)
-        3)
+        1) temperature control
+        2) fan control
+        3) zone control
     Name 3 things you can do with the:   Environment Controls
-        1)
-        2)
-        3)
+        1) change the temperature in a car
+        2) change the speed of fan
+        3) set different temperatures in different zones of a car 
 
 Sub Object 4: Infotainment System
     Name 3 things you'll find on the:    Infotainment System
-        1)
-        2)
-        3)
+        1) navigation
+        2) reversing camera
+        3) weather forecast info
     Name 3 things you can do with the:   Infotainment System
-        1)
-        2)
-        3)
+        1) set navigation destination
+        2) turn on reversing camera
+        3) check weather forecast
 
 Sub Object 5: Seat 
     Name 3 things you'll find on the:    Seat
-        1)
-        2)
-        3)
+        1) headrest
+        2) seat position adjustment lever 
+        3) seatback angle adjustment lever
     Name 2 things you can do with the:   Seat
-        1)
-        2)
+        1) adjust seat position
+        2) adjust seatback angle
 */
 
 /*
@@ -471,8 +471,127 @@ MOVE THEM BELOW this block comment and put them in numerical order
 After you have MOVED your 10 UDTs, send me a DM with your pull request link.
 I will review the pseudo-code that you have written.
 */
+/*
+1) Audio Interface
+5 properties:
+    1) brand name (std::string)
+    2) number of inputs (int)
+    3) number of outputs (int)
+    4) has an ability to provide phantom power for each input (bool)
+    5) has a volume knob (bool)
+3 things it can do:
+    1) convert analog signal from a microphone in digital signal
+    2) send signal from input to DAW
+    3) change the volume of the output signal
 
+2) Automatic coffee machine
+5 properties:
+    1) has a milk frother (bool)
+    2) number of drinks types that can be prepared (int)
+    3) number of programmed coffee strength (int)
+    4) has an automatic milk system cleaning program (bool)
+    5) number of drinks that can be prepared in a minute (double)
+3 things it can do:
+    1) grind coffee beans
+    2) froth the milk
+    3) make a cappuccino
 
+3) Digital piano
+5 properties:
+    1) number of keys (int)
+    2) number of pedals (int)
+    3) has an ability to record while playing (bool)
+    4) number of speakers (int)
+    5) has a usb port (bool)
+3 things it can do:
+    1) play programmed rythms
+    2) record while playing
+    3) play demo songs
+
+4) Oven
+5 properties:
+    1) number of programmed temperature settings (int)
+    2) number of oven racks (int)
+    3) has an ability to connect via bluetooth (bool)
+    4) has a temperature control (bool)
+    5) has a time control (bool)
+3 things it can do:
+    1) heat the food
+    2) defrost the food
+    3) melt the chocolate
+
+5) Storage
+5 properties:
+    1) capacity (int)
+    2) unit of transfer (int)
+    3) access method (std::string)
+    4) physical characteristics (std::string)
+    5) physical type (std::string)
+3 things it can do:
+    1) store data
+    2) transfer data to another memory location
+    3) erase data
+
+6) CPU
+5 properties:
+    1) clock speed (double)
+    2) cache size (int)
+    3) process size (int)
+    4) number of cores (int)
+    5) material (std::string)
+3 things it can do:
+    1) receive an instruction
+    2) decode instruction
+    3) execute instruction
+
+7) GPU
+5 properties:
+    1) core clock (double)
+    2) memory clock (double)
+    3) shader clock (double)
+    4) temperature (double)
+    5) GPU load (double)
+3 things it can do:
+    1) render 2D/3D graphics
+    2) encode video
+    3) compute large amount of data
+
+8) RAM
+5 properties:
+    1) type (std::string)
+    2) memory (int)
+    3) capacity (int)
+    4) number of pins (int)
+    5) module speed (int)
+3 things it can do:
+    1) allow computer to load application
+    2) allow computer browse the internet
+    3) allow computer edit a spreadsheet
+
+9) IO Ports
+5 properties:
+    1) number of audio ports (int)
+    2) number of USB ports (int)
+    3) number of HDMI ports (int)
+    4) number of thunderbolt ports (int)
+    5) number of ethernet ports (int)
+3 things it can do:
+    1) connect computer mouse
+    2) connect keyboard
+    3) connect monitor
+
+Thing 10) Computer
+5 properties:
+    1) Storage
+    2) CPU
+    3) GPU
+    4) RAM
+    5) IO Ports
+3 things it can do:
+    1) record sound
+    2) store recordings
+    3) play recorded files
+*/
 
 
 /*
