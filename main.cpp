@@ -198,7 +198,30 @@ struct CarWash //                                   1) define an empty struct fo
     1) convert analog signal from a microphone in digital signal
     2) send signal from input to DAW
     3) change the volume of the output signal
+*/
 
+struct AudioInterface
+{
+    //1) brand name (std::string)
+    std::string brandName = "Native Instruments";
+    //2) number of inputs (int)
+    int numberOfInputs = 2;
+    //3) number of outputs (int)
+    int numberOfOutputs = 2;
+    //4) has an ability to provide phantom power for each input (bool)
+    bool abilityToProvidePhantomPowerForEachInput = true;
+    //5 has a volume knob (bool)
+    bool hasAVolumeKnob = true;
+
+    //1) convert analog signal from a microphone in digital signal
+    void convertAnalogToDigitalSignal();
+    //2) send signal from input to DAW
+    void sendToDAW();
+    //3) change the volume of the output signal
+    void changeOutputVolume();
+};
+
+/*
 2) Automatic coffee machine
 5 properties:
     1) has a milk frother (bool)
@@ -210,6 +233,52 @@ struct CarWash //                                   1) define an empty struct fo
     1) grind coffee beans
     2) froth the milk
     3) make a cappuccino
+*/
+
+struct AutomaticCoffeeMachine
+{
+    //1) has a milk frother (bool)
+    bool hasMilkFrother = true;
+    //2) number of drinks types that can be prepared (int)
+    int numberOfDrinksTypes = 5;
+    //3) number of programmed coffee strength (int)
+    int numberOfProgrammedCoffeeStrength = 3;
+    //4) has an automatic milk system cleaning program (bool)
+    bool hasAutomaticMilkSystemCleaningProgram = true;
+    //5) number of drinks that can be prepared in a minute (double)
+    double numberOfDrinksPreparedPerMinute = 2.5;
+
+    struct CoffeeBeans
+    {
+        //1) type of coffee beans (std::string)
+    std::string type = "arabica";
+        //2) type of coffee based on the origin (std::string)
+    std::string typeBasedOnTheOrigin = "blend";
+        //3) growing region (std::string)
+    std::string growingRegion = "Ethiopia";
+        //4) type of roasts (std::string)
+    std::string typeOfRoasts = "dark";
+        //5) content of  caffeine per cup [mg] (int)
+    int contentOfCaffeinePerCupMl = 100;
+
+        //1) import coffe beans
+    void import();
+        //2) check the moisture of coffe beans
+    void checkTheMoisture();
+        //2) roast coffee beans
+    void roast();
+
+
+    };
+    //1) grind coffee beans
+    void grindCoffeeBeans();
+    //2) froth the milk
+    void frothMilk();
+    //3) make a cappuccino
+    void makeCappuccino();
+};
+
+/*
 
 3) Digital piano
 5 properties:
@@ -222,7 +291,30 @@ struct CarWash //                                   1) define an empty struct fo
     1) play programmed rythms
     2) record while playing
     3) play demo songs
+*/
 
+struct DigitalPiano
+{
+    //1) number of keys (int)
+    int numberOfKeys = 88;
+    //2) number of pedals (int)
+    int numberOfPedals = 3;
+    //3) has an ability to record while playing (bool)
+    bool abilityToRecordWhilePlaying = false;
+    //4) number of speakers (int)
+    int numberOfSpeakers = 2;
+    //5) has a usb port (bool)
+    bool hasUsbPort = true;
+
+    //1) play programmed rythm
+    void playProgrammedRythm();
+    //2) record while playing
+    void recordWhilePlaying();
+    //3) play demo song
+    void playDemoSong();
+};
+
+/*
 4) Oven
 5 properties:
     1) number of programmed temperature settings (int)
@@ -234,7 +326,52 @@ struct CarWash //                                   1) define an empty struct fo
     1) heat the food
     2) defrost the food
     3) melt the chocolate
+*/
 
+struct Oven
+{
+    //1) number of programmed temperature settings (int)
+    int numberOfProgrammedTemperatureSettings = 10;
+    //2) number of oven racks (int)
+    int numberOfOvenRacks = 4;
+    //3) has an ability to connect via bluetooth (bool)
+    bool connectViaBluetooth = false;
+    //4) has a temperature control (bool)
+    bool hasATemperatureControl = true;
+    //5) has a time control (bool)
+    bool hasATimeControl = true;
+
+    struct OvenShelf
+    {
+        //1) type of oven shelf (std::string)
+        std::string type = "grill";
+        //2) material of oven shelf (std::string)
+        std::string material = "steel";
+        //3) weigh of oven shelf [g] (int)
+        int weigh = 800;
+        //4) width of oven shelf [mm] (int)
+        int width = 474;
+        //5) length of oven shelf [mm] (int)
+        int length = 435;
+
+        //1) clean oven shelf
+        void clean();
+        //2) place oven shelf on the oven rack
+        void placeOnTheOvenRack();
+        //3) change the position of the oven rack
+        void changeOvenRack();
+    
+    };
+
+    //1) heat the food
+    void heatTheFood(int temperature);
+    //2) defrost the food
+    void defrostTheFood();
+    //3) melt the chocolate
+    void meltTheChocolate();
+};
+
+/*
 5) Storage
 5 properties:
     1) capacity (int)
@@ -246,7 +383,30 @@ struct CarWash //                                   1) define an empty struct fo
     1) store data
     2) transfer data to another memory location
     3) erase data
+*/
 
+struct Storage
+{
+    //1) capacity [GB] (int)
+    int capacityGB = 500;
+    //2) unit of transfer (double)
+    double unitOfTransferMbps = 1.5;
+    //3) access method (std::string)
+    std::string accessMethod = "direct";
+    //4) physical characteristics (std::string)
+    std::string physicalCharacteristics = "Internal Hard Disk";
+    //5) physical type (std::string)
+    std::string physicalType = "magnetic";
+
+    //1) store data
+    void storeData (std::string dataInfo);
+    //2) transfer data to another memory location
+    void transferDataToAnotherMemoryLocation (std::string dataInfo, int memoryIdxToTransfer);
+    //3) erase data
+    void eraseData (std::string dataNameToErase);
+};
+
+/*
 6) CPU
 5 properties:
     1) clock speed (double)
@@ -258,7 +418,30 @@ struct CarWash //                                   1) define an empty struct fo
     1) receive an instruction
     2) decode instruction
     3) execute instruction
+*/
 
+struct CPU
+{
+    //1) clock speed [GHZ] (double)
+    double clockSpeedGhz = 2;
+    //2) cache size (int)
+    int cacheSize = 8;
+    //3) process size [nm] (int)
+    int processSizeNm = 14;
+    //4) number of cores (int)
+    int numberOfCores = 4;
+    //5) material (std::string)
+    std::string material = "aluminum";
+
+    //1) receive an instruction
+    void receiveInstruction(std::string infoName);
+    //2) decode instruction
+    void decodeInstruction(std::string infoName);
+    //3) execute instruction
+    void executeInstruction(std::string infoName);
+};
+
+/*
 7) GPU
 5 properties:
     1) core clock (double)
@@ -270,7 +453,30 @@ struct CarWash //                                   1) define an empty struct fo
     1) render 2D/3D graphics
     2) encode video
     3) compute large amount of data
+*/
 
+struct GPU
+{
+    //1) core clock speed [MHz] (double)
+    double coreClockSpeedMHz = 1465;
+    //2) memory size [GB] (int)
+    double memorySize = 8;
+    //3) shader clock (double)
+    double shaderClock = 1465;
+    //4) temperature (double)
+    double temperature = 100;
+    //5) GPU load (double)
+    double gpuLoad = 0;
+
+    //1) render 2D/3D graphics
+    void renderGraphics();
+    //2) encode video
+    void encodeVideo();
+    //3) compute large amount of data
+    void computeData();
+};
+
+/*
 8) RAM
 5 properties:
     1) type (std::string)
@@ -282,7 +488,30 @@ struct CarWash //                                   1) define an empty struct fo
     1) allow computer to load application
     2) allow computer browse the internet
     3) allow computer edit a spreadsheet
+*/
 
+struct RAM
+{
+    //1) type (std::string)
+    std::string type = "DDR3";
+    //2) memory [GB] (int)
+    int memoryGb = 4;
+    //3) color (std::string)
+    std::string color = "green";
+    //4) voltage (double)
+    double voltage = 1.35;
+    //5) module speed [MHz] (int)
+    int moduleSpeedMHz = 1600;
+
+    //1) allow computer to load application
+    void allowComputerToLoadApplication();
+    //2) allow computer browse the internet
+    void allowComputerBrowseTheInternet();
+    //3) allow computer edit a spreadsheet
+    void allowComputerEditSpreadsheet();
+};
+
+/*
 9) IO Ports
 5 properties:
     1) number of audio ports (int)
@@ -294,7 +523,30 @@ struct CarWash //                                   1) define an empty struct fo
     1) connect computer mouse
     2) connect keyboard
     3) connect monitor
+*/
 
+struct IOPorts
+{
+    //1) number of audio ports (int)
+    int numberOfAudioPorts = 2;
+    //2) number of USB ports (int)
+    int numberOfUSBPorts = 5;
+    //3) number of HDMI ports (int)
+    int numberOfHDMIPorts = 2;
+    //4) number of thunderbolt ports (int)
+    int numberOfThunderboltPorts = 1;
+    //5) number of ethernet ports (int)
+    int numberOfEthernetPorts = 1;
+
+    //1) connect computer mouse
+    void connectComputerMouse();
+    //2) connect keyboard
+    void connectKeyboard();
+    //3) connect monitor
+    void connectMonitor();
+};
+
+/*
 Thing 10) Computer
 5 properties:
     1) Storage
@@ -307,6 +559,27 @@ Thing 10) Computer
     2) store recordings
     3) play recorded files
 */
+
+struct Computer
+{
+    //1) Storage
+    Storage storageOfComputerNo1;
+    //2) CPU
+    CPU CPUOfComputerNo1;
+    //3) GPU
+    GPU GPUOfComputerNo1;
+    //4) RAM
+    RAM RAMOfComputerNo1;
+    //5) IO Ports
+    IOPorts IOPortsOfComputerNo1;
+
+    //1) record sound
+    void recordSound();
+    //2) store recordings
+    void storeRecordings(std::string fileName);
+    //3) play recorded file
+    void playRecordedFile(std::string fileName);
+};
 
 
 /*
