@@ -251,22 +251,22 @@ struct AutomaticCoffeeMachine
     struct CoffeeBeans
     {
         //1) type of coffee beans (std::string)
-    std::string type = "arabica";
+        std::string type = "arabica";
         //2) type of coffee based on the origin (std::string)
-    std::string typeBasedOnTheOrigin = "blend";
+        std::string typeBasedOnTheOrigin = "blend";
         //3) growing region (std::string)
-    std::string growingRegion = "Ethiopia";
+        std::string growingRegion = "Ethiopia";
         //4) type of roasts (std::string)
-    std::string typeOfRoasts = "dark";
+        std::string typeOfRoasts = "dark";
         //5) content of  caffeine per cup [mg] (int)
-    int contentOfCaffeinePerCupMl = 100;
+        int contentOfCaffeinePerCupMl = 100;
 
         //1) import coffe beans
-    void import();
+        void import();
         //2) check the moisture of coffe beans
-    void checkTheMoisture();
+        void checkTheMoisture();
         //2) roast coffee beans
-    void roast();
+        void roast();
 
 
     };
